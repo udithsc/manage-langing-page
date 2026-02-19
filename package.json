@@ -4,14 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./input.css -o ./css/main.css",
-    "watch": "npx tailwindcss -i ./input.css -o ./css/main.css --watch"
+    "build": "npx @tailwindcss/cli -i ./input.css -o ./css/main.css",
+    "watch": "npx @tailwindcss/cli -i ./input.css -o ./css/main.css --watch",
+    "serve": "live-server --port=5173 --no-css-inject --wait=200 ./",
+    "dev": "concurrently \"npm run watch\" \"npm run serve\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "parcel-bundler": "^1.3.1",
-    "tailwindcss": "^3.1.6"
+    "concurrently": "^9.1.0",
+    "live-server": "^1.2.2",
+    "@tailwindcss/cli": "^4.2.0",
+    "parcel-bundler": "^1.12.5",
+    "tailwindcss": "^4.2.0"
   }
 }
