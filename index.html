@@ -1,38 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    />
     <link rel="stylesheet" href="css/main.css" />
     <title>Manage Landing Page</title>
   </head>
-  <body>
+  <body class="transition-colors duration-300">
+    <!-- Utility safelist for JS-toggled classes -->
+    <div class="hidden overflow-hidden"></div>
     <!-- Navbar -->
-    <nav class="relative container mx-auto p-6">
-      <!-- Flex container -->
-      <div class="flex items-center justify-between">
+    <nav
+      class="fixed inset-x-0 top-0 z-30 border-b border-white/60 bg-white/80 backdrop-blur"
+    >
+      <div
+        class="container mx-auto flex items-center justify-between px-6 py-4"
+      >
         <!-- Logo -->
-        <div class="pt-2">
-          <img src="images/logo.svg" alt="" />
+        <div class="pt-1">
+          <img id="nav-logo" src="images/logo.svg" alt="Manage" />
         </div>
         <!-- Menu Items -->
-        <div class="hidden space-x-6 md:flex">
-          <a href="#" class="hover:text-darkGrayishBlue">Pricing</a>
-          <a href="#" class="hover:text-darkGrayishBlue">Product</a>
-          <a href="#" class="hover:text-darkGrayishBlue">About Us</a>
-          <a href="#" class="hover:text-darkGrayishBlue">Careers</a>
-          <a href="#" class="hover:text-darkGrayishBlue">Community</a>
+        <div class="hidden items-center space-x-8 text-sm font-medium md:flex">
+          <a href="#pricing" class="hover:text-darkGrayishBlue">Pricing</a>
+          <a href="#product" class="hover:text-darkGrayishBlue">Product</a>
+          <a href="#about" class="hover:text-darkGrayishBlue">About Us</a>
+          <a href="#careers" class="hover:text-darkGrayishBlue">Careers</a>
+          <a href="#community" class="hover:text-darkGrayishBlue">Community</a>
         </div>
+        <!-- Theme Toggle -->
+        <button
+          id="theme-toggle"
+          type="button"
+          aria-label="Toggle theme"
+          class="hidden rounded-full bg-white/80 p-2.5 text-darkBlue shadow-md transition hover:bg-white md:block"
+        >
+          <svg
+            id="theme-icon-light"
+            class="h-5 w-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+            />
+          </svg>
+          <svg
+            id="theme-icon-dark"
+            class="hidden h-5 w-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+            />
+          </svg>
+        </button>
+
         <!-- Button -->
         <a
-          href="#"
-          class="hidden p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight md:block"
+          href="#pricing"
+          class="hidden rounded-full bg-brightRed px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brightRed/40 transition hover:-translate-y-0.5 hover:bg-brightRedLight md:block"
           >Get Started</a
         >
 
+        <!-- Mobile Theme Toggle -->
+        <button
+          id="theme-toggle-mobile"
+          type="button"
+          aria-label="Toggle theme"
+          class="mr-3 rounded-full bg-white/80 p-2 text-darkBlue shadow-md transition hover:bg-white md:hidden"
+        >
+          <svg
+            id="theme-icon-light-mobile"
+            class="h-5 w-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+            />
+          </svg>
+          <svg
+            id="theme-icon-dark-mobile"
+            class="hidden h-5 w-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+            />
+          </svg>
+        </button>
+
         <!-- Hamburger Icon -->
-        <div id="menu-btn" class="block hamburger md:hidden focus:outline-none">
+        <div
+          id="menu-btn"
+          class="block hamburger md:hidden focus:outline-none"
+        >
           <span class="hamburger-top"></span>
           <span class="hamburger-middle"></span>
           <span class="hamburger-bottom"></span>
@@ -40,60 +126,91 @@
       </div>
 
       <!-- Mobile Menu -->
-      <div class="md:hidden">
+      <div
+        id="menu"
+        class="fixed inset-0 z-40 hidden flex-col items-center justify-start bg-black/30 pt-24 px-6 text-sm font-semibold md:hidden"
+      >
         <div
-          id="menu"
-          class="absolute flex-col items-center hidden self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
+          class="w-full max-w-xs rounded-2xl bg-white/90 py-4 text-center shadow-xl drop-shadow-md"
+          data-menu-panel
         >
-          <a href="#">Pricing</a>
-          <a href="#">Product</a>
-          <a href="#">About Us</a>
-          <a href="#">Careers</a>
-          <a href="#">Community</a>
+          <div class="border-t border-veryLightGray pt-2">
+            <a href="#pricing" class="block py-3">Pricing</a>
+            <a href="#product" class="block py-3">Product</a>
+            <a href="#about" class="block py-3">About Us</a>
+            <a href="#careers" class="block py-3">Careers</a>
+            <a href="#community" class="block py-3">Community</a>
+          </div>
         </div>
       </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero">
+    <section
+      id="hero"
+      class="relative pt-28 pb-20 md:pt-32 md:pb-28 lg:pb-32"
+    >
+      <div
+        class="pointer-events-none absolute inset-x-0 -top-40 -z-10 h-96 bg-gradient-to-b from-veryPaleRed/80 via-white to-transparent"
+      ></div>
       <!-- Flex Container -->
       <div
-        class="container flex flex-col-reverse items-center px-6 mx-auto mt-10 space-y-0 md:space-y-0 md:flex-row"
+        class="container mx-auto flex flex-col-reverse items-center gap-16 px-6 md:flex-row"
       >
         <!-- Left item -->
-        <div class="flex flex-col mb-32 space-y-12 md:w-1/2">
-          <h1
-            class="max-w-md text-4xl font-bold text-center md:text-5xl md:text-left"
-          >
-            Bring everyone together to build better products
-          </h1>
-          <p class="max-w-sm text-center text-darkGrayishBlue md:text-left">
-            Manage makes it simple for software teams to plan day-to-day tasks
-            while keeping the larger team goals in view.
+        <div class="flex flex-col space-y-10 md:w-1/2 animate-fade-in-up">
+          <p class="text-sm font-semibold tracking-[0.3em] text-brightRed">
+            MODERN PRODUCT TEAMS
           </p>
-          <div class="flex justify-center md:justify-start">
+          <h1
+            class="max-w-xl text-center text-4xl font-extrabold leading-tight text-darkBlue md:text-left md:text-5xl lg:text-6xl"
+          >
+            Bring everyone together to
+            <span
+              class="bg-gradient-to-r from-brightRed to-orange-500 bg-clip-text text-transparent"
+              >build better products</span
+            >
+          </h1>
+          <p class="max-w-md text-center text-darkGrayishBlue md:text-left">
+            Manage keeps your roadmap, goals, and day-to-day tasks beautifully
+            in sync so your team can move fast without breaking alignment.
+          </p>
+          <div class="flex justify-center gap-4 md:justify-start">
             <a
-              href="#"
-              class="p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight"
+              href="#pricing"
+              class="rounded-full bg-brightRed px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-brightRed/40 transition hover:-translate-y-0.5 hover:bg-brightRedLight"
               >Get Started</a
+            >
+            <a
+              href="#product"
+              class="rounded-full border border-transparent bg-white/70 px-8 py-3 text-sm font-semibold text-darkGrayishBlue shadow-sm backdrop-blur transition hover:border-brightRed/40 hover:text-darkBlue hover:shadow-md"
+              >See how it works</a
             >
           </div>
         </div>
         <!-- Image -->
-        <div class="md:w-1/2">
-          <img src="images/illustration-intro.svg" alt="" />
+        <div class="md:w-1/2 animate-fade-in-up animate-fade-in-up-delay-1">
+          <div
+            class="relative mx-auto max-w-md overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/40 shadow-2xl shadow-brightRed/10 backdrop-blur"
+          >
+            <img
+              src="images/illustration-intro.svg"
+              alt=""
+              class="w-full translate-y-2 scale-105 object-contain"
+            />
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features">
+    <!-- Product Section -->
+    <section id="product" class="bg-white py-20 md:py-24">
       <!-- Flex container -->
       <div
-        class="container flex flex-col px-4 mx-auto mt-10 space-y-12 md:space-y-0 md:flex-row"
+        class="container mx-auto flex flex-col space-y-12 px-4 md:flex-row md:space-y-0"
       >
         <!-- What's Different -->
-        <div class="flex flex-col space-y-12 md:w-1/2">
+        <div class="flex flex-col space-y-8 md:w-1/2 animate-fade-in-up">
           <h2 class="max-w-md text-4xl font-bold text-center md:text-left">
             What's different about Manage?
           </h2>
@@ -105,10 +222,10 @@
         </div>
 
         <!-- Numbered List -->
-        <div class="flex flex-col space-y-8 md:w-1/2">
+        <div class="flex flex-col space-y-10 md:w-1/2">
           <!-- List Item 1 -->
           <div
-            class="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row"
+            class="flex flex-col space-y-3 md:flex-row md:space-x-6 md:space-y-0 animate-fade-in-up"
           >
             <!-- Heading -->
             <div class="rounded-l-full bg-brightRedSupLight md:bg-transparent">
@@ -139,7 +256,7 @@
 
           <!-- List Item 2 -->
           <div
-            class="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row"
+            class="flex flex-col space-y-3 md:flex-row md:space-x-6 md:space-y-0 animate-fade-in-up-delay-1"
           >
             <!-- Heading -->
             <div class="rounded-l-full bg-brightRedSupLight md:bg-transparent">
@@ -169,7 +286,7 @@
 
           <!-- List Item 3 -->
           <div
-            class="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row"
+            class="flex flex-col space-y-3 md:flex-row md:space-x-6 md:space-y-0 animate-fade-in-up-delay-2"
           >
             <!-- Heading -->
             <div class="rounded-l-full bg-brightRedSupLight md:bg-transparent">
@@ -200,6 +317,88 @@
       </div>
     </section>
 
+    <!-- Pricing Section -->
+    <section
+      id="pricing"
+      class="bg-gradient-to-b from-veryLightGray via-white to-veryPaleRed/60 py-20"
+    >
+      <div class="container mx-auto px-4 text-center">
+        <div class="mx-auto max-w-2xl space-y-4">
+          <h2 class="text-3xl font-bold md:text-4xl">
+            Simple, transparent pricing
+          </h2>
+          <p class="text-darkGrayishBlue">
+            Choose the plan that fits your team today and upgrade as you grow.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-8 md:grid-cols-3">
+          <!-- Card 1 -->
+          <div
+            class="flex h-full flex-col rounded-3xl border border-white/70 bg-white/80 p-8 text-left shadow-lg shadow-brightRed/5 backdrop-blur animate-fade-in-up"
+          >
+            <p class="text-sm font-semibold text-brightRed">Starter</p>
+            <h3 class="mt-3 text-3xl font-extrabold">$0</h3>
+            <p class="mt-2 text-sm text-darkGrayishBlue">
+              For small teams getting started with product planning.
+            </p>
+            <ul class="mt-6 space-y-2 text-sm text-darkGrayishBlue">
+              <li>Up to 3 active projects</li>
+              <li>Shared roadmap</li>
+              <li>Basic reporting</li>
+            </ul>
+            <a
+              href="#community"
+              class="mt-8 inline-flex w-full items-center justify-center rounded-full bg-brightRed px-4 py-2 text-sm font-semibold text-white shadow-md shadow-brightRed/40 transition hover:-translate-y-0.5 hover:bg-brightRedLight"
+              >Get started</a
+            >
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="flex h-full flex-col rounded-3xl border border-brightRed/40 bg-brightRed text-white p-8 text-left shadow-xl shadow-brightRed/40 backdrop-blur animate-fade-in-up-delay-1"
+          >
+            <p class="text-sm font-semibold uppercase tracking-wide">Growth</p>
+            <h3 class="mt-3 text-3xl font-extrabold">$19</h3>
+            <p class="mt-2 text-sm text-veryPaleRed">
+              Everything you need to keep multiple squads aligned.
+            </p>
+            <ul class="mt-6 space-y-2 text-sm text-veryPaleRed">
+              <li>Unlimited projects</li>
+              <li>Advanced reporting</li>
+              <li>Priority support</li>
+            </ul>
+            <a
+              href="#community"
+              class="mt-8 inline-flex w-full items-center justify-center rounded-full bg-white px-4 py-2 text-sm font-semibold text-brightRed shadow-md shadow-white/40 transition hover:-translate-y-0.5 hover:bg-veryPaleRed"
+              >Most popular</a
+            >
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="flex h-full flex-col rounded-3xl border border-white/70 bg-white/80 p-8 text-left shadow-lg shadow-brightRed/5 backdrop-blur animate-fade-in-up-delay-2"
+          >
+            <p class="text-sm font-semibold text-brightRed">Enterprise</p>
+            <h3 class="mt-3 text-3xl font-extrabold">Let’s talk</h3>
+            <p class="mt-2 text-sm text-darkGrayishBlue">
+              Custom onboarding, security reviews, and dedicated support.
+            </p>
+            <ul class="mt-6 space-y-2 text-sm text-darkGrayishBlue">
+              <li>Custom SLAs</li>
+              <li>Security & compliance review</li>
+              <li>Dedicated success manager</li>
+            </ul>
+            <a
+              href="#community"
+              class="mt-8 inline-flex w-full items-center justify-center rounded-full border border-brightRed/40 bg-white px-4 py-2 text-sm font-semibold text-brightRed shadow-sm transition hover:bg-veryPaleRed"
+              >Contact sales</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Testimonials -->
     <section id="testimonials">
       <!-- Container to heading and testm blocks -->
@@ -212,7 +411,7 @@
         <div class="flex flex-col mt-24 md:flex-row md:space-x-6">
           <!-- Testimonial 1 -->
           <div
-            class="flex flex-col items-center p-6 space-y-6 rounded-lg bg-veryLightGray md:w-1/3"
+            class="flex flex-col items-center p-6 space-y-6 rounded-2xl bg-white/80 shadow-lg shadow-brightRed/5 backdrop-blur md:w-1/3 animate-fade-in-up"
           >
             <img src="images/avatar-anisha.png" class="w-16 -mt-14" alt="" />
             <h5 class="text-lg font-bold">Anisha Li</h5>
@@ -225,7 +424,7 @@
 
           <!-- Testimonial 2 -->
           <div
-            class="hidden flex-col items-center p-6 space-y-6 rounded-lg bg-veryLightGray md:flex md:w-1/3"
+            class="hidden flex-col items-center p-6 space-y-6 rounded-2xl bg-white/80 shadow-lg shadow-brightRed/5 backdrop-blur md:flex md:w-1/3 animate-fade-in-up-delay-1"
           >
             <img src="images/avatar-ali.png" class="w-16 -mt-14" alt="" />
             <h5 class="text-lg font-bold">Ali Bravo</h5>
@@ -238,7 +437,7 @@
 
           <!-- Testimonial 3 -->
           <div
-            class="hidden flex-col items-center p-6 space-y-6 rounded-lg bg-veryLightGray md:flex md:w-1/3"
+            class="hidden flex-col items-center p-6 space-y-6 rounded-2xl bg-white/80 shadow-lg shadow-brightRed/5 backdrop-blur md:flex md:w-1/3 animate-fade-in-up-delay-2"
           >
             <img src="images/avatar-richard.png" class="w-16 -mt-14" alt="" />
             <h5 class="text-lg font-bold">Richard Watts</h5>
@@ -260,8 +459,114 @@
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section id="cta" class="bg-brightRed">
+    <!-- About Section -->
+    <section id="about" class="bg-white py-20">
+      <div
+        class="container mx-auto flex flex-col items-start gap-12 px-4 md:flex-row"
+      >
+        <div class="space-y-6 md:w-1/2 animate-fade-in-up">
+          <h2 class="text-3xl font-bold md:text-4xl">Built for modern teams</h2>
+          <p class="text-darkGrayishBlue">
+            Manage is a fully remote, product-first company focused on helping
+            distributed teams stay aligned without endless status meetings.
+          </p>
+          <p class="text-darkGrayishBlue">
+            We believe the best products come from teams that can clearly see
+            how day-to-day decisions roll up into long-term outcomes.
+          </p>
+        </div>
+        <div class="grid w-full gap-6 md:w-1/2 md:grid-cols-2">
+          <div
+            class="rounded-2xl border border-white/70 bg-veryPaleRed/60 p-6 shadow-sm"
+          >
+            <p class="text-sm font-semibold text-brightRed">2018</p>
+            <p class="mt-2 text-sm text-darkGrayishBlue">
+              Founded with a mission to make product work more human.
+            </p>
+          </div>
+          <div
+            class="rounded-2xl border border-white/70 bg-veryPaleRed/60 p-6 shadow-sm"
+          >
+            <p class="text-sm font-semibold text-brightRed">120k+</p>
+            <p class="mt-2 text-sm text-darkGrayishBlue">
+              Product people using Manage to plan and ship.
+            </p>
+          </div>
+          <div
+            class="rounded-2xl border border-white/70 bg-veryPaleRed/60 p-6 shadow-sm md:col-span-2"
+          >
+            <p class="text-sm font-semibold text-brightRed">Global by default</p>
+            <p class="mt-2 text-sm text-darkGrayishBlue">
+              A fully distributed team across 20+ countries and time zones.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section
+      id="careers"
+      class="bg-gradient-to-b from-veryPaleRed/60 via-white to-veryLightGray py-20"
+    >
+      <div class="container mx-auto px-4">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="text-3xl font-bold md:text-4xl">Careers at Manage</h2>
+          <p class="mt-4 text-darkGrayishBlue">
+            Join a remote-first team shaping how modern product organizations
+            work.
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          <div
+            class="rounded-2xl border border-white/70 bg-white/80 p-6 shadow-sm backdrop-blur"
+          >
+            <p class="text-sm font-semibold text-brightRed">Product Design</p>
+            <p class="mt-2 text-sm text-darkGrayishBlue">
+              Senior Product Designer
+            </p>
+            <p class="mt-1 text-xs text-darkGrayishBlue">
+              Remote · Americas / Europe
+            </p>
+          </div>
+          <div
+            class="rounded-2xl border border-white/70 bg-white/80 p-6 shadow-sm backdrop-blur"
+          >
+            <p class="text-sm font-semibold text-brightRed">Engineering</p>
+            <p class="mt-2 text-sm text-darkGrayishBlue">
+              Senior Frontend Engineer
+            </p>
+            <p class="mt-1 text-xs text-darkGrayishBlue">Remote · Global</p>
+          </div>
+          <div
+            class="rounded-2xl border border-white/70 bg-white/80 p-6 shadow-sm backdrop-blur"
+          >
+            <p class="text-sm font-semibold text-brightRed">
+              Customer Success
+            </p>
+            <p class="mt-2 text-sm text-darkGrayishBlue">
+              Customer Success Manager
+            </p>
+            <p class="mt-1 text-xs text-darkGrayishBlue">Remote · Europe</p>
+          </div>
+        </div>
+
+        <div class="mt-10 text-center">
+          <a
+            href="#community"
+            class="inline-flex items-center justify-center rounded-full border border-brightRed/40 px-8 py-3 text-sm font-semibold text-brightRed transition hover:bg-brightRed hover:text-white"
+            >View all open roles</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Community CTA Section -->
+    <section
+      id="community"
+      class="relative overflow-hidden bg-brightRed"
+    >
       <!-- Flex Container -->
       <div
         class="container flex flex-col items-center justify-between px-6 py-24 mx-auto space-y-12 md:py-12 md:flex-row md:space-y-0"
@@ -270,7 +575,7 @@
         <h2
           class="text-5xl font-bold leading-tight text-center text-white md:text-4xl md:max-w-xl md:text-left"
         >
-          Simplify how your team works today
+          Join thousands of product teams already using Manage
         </h2>
         <!-- Button -->
         <div>
@@ -287,76 +592,76 @@
     <footer class="bg-veryDarkBlue">
       <!-- Flex Container -->
       <div
-        class="container flex flex-col-reverse justify-between px-6 py-10 mx-auto space-y-8 md:flex-row md:space-y-0"
+        class="container flex flex-col-reverse justify-between gap-8 px-6 py-12 mx-auto md:flex-row md:gap-0"
       >
         <!-- Logo and social links container -->
         <div
-          class="flex flex-col-reverse items-center justify-between space-y-12 md:flex-col md:space-y-0 md:items-start"
+          class="flex flex-col-reverse items-center gap-8 md:flex-col md:items-start md:gap-6"
         >
-          <div class="mx-auto my-6 text-center text-white md:hidden">
-            Copyright &copy; 2022, All Rights Reserved
+          <div class="text-center text-white md:hidden">
+            Copyright &copy; <span id="copyright-year">2022</span>, All Rights Reserved
           </div>
           <!-- Logo -->
           <div>
             <img src="images/logo-white.svg" class="h-8" alt="" />
           </div>
           <!-- Social Links Container -->
-          <div class="flex justify-center space-x-4">
+          <div class="flex justify-center gap-4 md:justify-start">
             <!-- Link 1 -->
-            <a href="#">
+            <a href="#" class="hover:opacity-70 transition-opacity">
               <img src="images/icon-facebook.svg" alt="" class="h-8" />
             </a>
             <!-- Link 2 -->
-            <a href="#">
+            <a href="#" class="hover:opacity-70 transition-opacity">
               <img src="images/icon-youtube.svg" alt="" class="h-8" />
             </a>
             <!-- Link 3 -->
-            <a href="#">
+            <a href="#" class="hover:opacity-70 transition-opacity">
               <img src="images/icon-twitter.svg" alt="" class="h-8" />
             </a>
             <!-- Link 4 -->
-            <a href="#">
+            <a href="#" class="hover:opacity-70 transition-opacity">
               <img src="images/icon-pinterest.svg" alt="" class="h-8" />
             </a>
             <!-- Link 5 -->
-            <a href="#">
+            <a href="#" class="hover:opacity-70 transition-opacity">
               <img src="images/icon-instagram.svg" alt="" class="h-8" />
             </a>
           </div>
         </div>
         <!-- List Container -->
-        <div class="flex justify-around space-x-32">
-          <div class="flex flex-col space-y-3 text-white">
-            <a href="#" class="hover:text-brightRed">Home</a>
-            <a href="#" class="hover:text-brightRed">Pricing</a>
-            <a href="#" class="hover:text-brightRed">Products</a>
-            <a href="#" class="hover:text-brightRed">About</a>
+        <div class="flex justify-around gap-16 md:gap-32">
+          <div class="flex flex-col gap-3 text-white">
+            <a href="#" class="hover:text-brightRed transition-colors">Home</a>
+            <a href="#" class="hover:text-brightRed transition-colors">Pricing</a>
+            <a href="#" class="hover:text-brightRed transition-colors">Products</a>
+            <a href="#" class="hover:text-brightRed transition-colors">About</a>
           </div>
-          <div class="flex flex-col space-y-3 text-white">
-            <a href="#" class="hover:text-brightRed">Careers</a>
-            <a href="#" class="hover:text-brightRed">Community</a>
-            <a href="#" class="hover:text-brightRed">Privacy Policy</a>
+          <div class="flex flex-col gap-3 text-white">
+            <a href="#" class="hover:text-brightRed transition-colors">Careers</a>
+            <a href="#" class="hover:text-brightRed transition-colors">Community</a>
+            <a href="#" class="hover:text-brightRed transition-colors">Privacy Policy</a>
           </div>
         </div>
 
         <!-- Input Container -->
-        <div class="flex flex-col justify-between">
+        <div class="flex flex-col gap-4 justify-between">
           <form>
-            <div class="flex space-x-3">
+            <div class="flex gap-3">
               <input
                 type="text"
-                class="flex-1 px-4 rounded-full focus:outline-none"
+                class="flex-1 px-4 py-2 rounded-full focus:outline-none text-darkBlue"
                 placeholder="Updated in your inbox"
               />
               <button
-                class="px-6 py-2 text-white rounded-full bg-brightRed hover:bg-brightRedLight focus:outline-none"
+                class="px-6 py-2 text-white rounded-full bg-brightRed hover:bg-brightRedLight focus:outline-none transition-colors"
               >
                 Go
               </button>
             </div>
           </form>
           <div class="hidden text-white md:block">
-            Copyright &copy; 2022, All Rights Reserved
+            Copyright &copy; <span id="copyright-year-desktop">2022</span>, All Rights Reserved
           </div>
         </div>
       </div>
