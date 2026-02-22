@@ -8,6 +8,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-orange-500: oklch(70.5% 0.213 47.604);
+    --color-gray-50: oklch(98.5% 0.002 247.839);
     --color-gray-900: oklch(21% 0.034 264.665);
     --color-black: #000;
     --color-white: #fff;
@@ -532,6 +533,9 @@
   }
   .bg-brightRedSupLight {
     background-color: hsl(12, 88%, 95%);
+  }
+  .bg-gray-50 {
+    background-color: var(--color-gray-50);
   }
   .bg-veryDarkBlue {
     background-color: hsl(233, 12%, 13%);
