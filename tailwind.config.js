@@ -10,13 +10,13 @@ module.exports = {
     },
     extend: {
       colors: {
-        brightRed: 'hsl(12, 88%, 59%)',
-        brightRedLight: 'hsl(12, 88%, 69%)',
-        brightRedSupLight: 'hsl(12, 88%, 95%)',
+        primaryBlue: 'hsl(221, 55%, 52%)',
+        primaryBlueLight: 'hsl(221, 65%, 65%)',
+        primaryBlueSupLight: 'hsl(221, 85%, 90%)',
         darkBlue: 'hsl(228, 39%, 23%)',
         darkGrayishBlue: 'hsl(227, 12%, 61%)',
         veryDarkBlue: 'hsl(233, 12%, 13%)',
-        veryPaleRed: 'hsl(13, 100%, 96%)',
+        veryPaleBlue: 'hsl(221, 85%, 96%)',
         veryLightGray: 'hsl(0, 0%, 98%)',
       },
     },
