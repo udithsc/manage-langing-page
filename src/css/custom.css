@@ -2,6 +2,17 @@
 @config "../../tailwind.config.js";
 @source "../**/*.{html,js}";
 
+:root {
+  --color-primary-blue: hsl(221, 55%, 52%);
+  --color-primary-blue-light: hsl(221, 65%, 65%);
+  --color-primary-blue-sup-light: hsl(221, 85%, 90%);
+  --color-dark-blue: hsl(228, 39%, 23%);
+  --color-dark-grayish-blue: hsl(227, 12%, 61%);
+  --color-very-dark-blue: hsl(233, 12%, 13%);
+  --color-very-pale-blue: hsl(221, 85%, 96%);
+  --color-very-light-gray: hsl(0, 0%, 98%);
+}
+
 body {
   background-image: url('../images/bg-tablet-pattern.svg');
   background-repeat: no-repeat;
@@ -196,7 +207,7 @@ body {
 }
 
 .dark .bg-primaryBlueSupLight {
-  background-color: rgba(233, 69, 96, 0.15);
+  background-color: transparent !important;
 }
 
 /* Hero secondary CTA in dark mode */
@@ -207,7 +218,7 @@ body {
 }
 
 .dark .hero-secondary-btn:hover {
-  border-color: hsl(221, 55%, 52%);
+  border-color: var(--color-primary-blue);
   color: #f97316;
   background-color: rgba(15, 23, 42, 0.6);
 }
@@ -257,6 +268,6 @@ body {
 
 .dark input:focus,
 .dark textarea:focus {
-  outline: 2px solid hsl(221, 55%, 52%);
+  outline: 2px solid var(--color-primary-blue);
   outline-offset: 2px;
 }
