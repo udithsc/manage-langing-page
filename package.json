@@ -4,17 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"npx @tailwindcss/cli -i ./input.css -o ./css/main.css --watch\" \"live-server --port=5173 --no-css-inject --wait=200 ./\"",
-    "build": "npx @tailwindcss/cli -i ./input.css -o ./css/main.css && mkdir -p dist && cp -r index.html css images js dist/",
+    "dev": "concurrently \"npx @tailwindcss/cli -i ./src/css/custom.css -o ./src/css/main.css --watch\" \"live-server --port=5173 --no-css-inject --wait=200 ./src\"",
+    "build": "npx @tailwindcss/cli -i ./src/css/custom.css -o ./src/css/main.css && mkdir -p dist && cp -r src/index.html src/css src/images src/js dist/",
     "serve": "npm run build && live-server --port=8080 --no-css-inject ./dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^9.1.0",
-    "live-server": "^1.2.2",
     "@tailwindcss/cli": "^4.2.0",
+    "concurrently": "^9.2.1",
+    "live-server": "^1.2.2",
     "parcel-bundler": "^1.12.5",
     "tailwindcss": "^4.2.0"
   }
