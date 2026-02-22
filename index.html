@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
   <link rel="stylesheet" href="css/main.css" />
-  <title>Manage Landing Page</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+  <title>UDT Web Solutions</title>
 </head>
 
 <body class="transition-colors duration-300">
@@ -18,15 +19,15 @@
     <div class="container mx-auto flex items-center justify-between px-6 py-4">
       <!-- Logo -->
       <div class="pt-1">
-        <img id="nav-logo" src="images/logo.svg" alt="Manage" />
+        <img id="nav-logo" src="images/udt-logo.svg" alt="UDT Web Solutions" />
       </div>
       <!-- Menu Items -->
       <div class="hidden items-center space-x-8 text-sm font-medium md:flex">
-        <a href="#pricing" class="hover:text-darkGrayishBlue">Pricing</a>
-        <a href="#product" class="hover:text-darkGrayishBlue">Product</a>
-        <a href="#about" class="hover:text-darkGrayishBlue">About Us</a>
-        <a href="#careers" class="hover:text-darkGrayishBlue">Careers</a>
-        <a href="#community" class="hover:text-darkGrayishBlue">Community</a>
+        <a href="#product" class="hover:text-darkGrayishBlue transition-colors hover:text-brightRed">Services</a>
+        <a href="#pricing" class="hover:text-darkGrayishBlue transition-colors hover:text-brightRed">Pricing</a>
+        <a href="#about" class="hover:text-darkGrayishBlue transition-colors hover:text-brightRed">About Us</a>
+        <a href="#enterprice" class="hover:text-darkGrayishBlue transition-colors hover:text-brightRed">Expertise</a>
+        <a href="#contact" class="hover:text-darkGrayishBlue transition-colors hover:text-brightRed">Contact</a>
       </div>
       <!-- Theme Toggle -->
       <button id="theme-toggle" type="button" aria-label="Toggle theme"
@@ -72,11 +73,11 @@
       class="fixed inset-0 z-40 hidden flex-col items-center justify-start bg-black/30 pt-24 px-6 text-sm font-semibold md:hidden">
       <div class="w-full max-w-xs rounded-2xl bg-white/90 py-4 text-center shadow-xl drop-shadow-md" data-menu-panel>
         <div class="border-t border-veryLightGray pt-2">
-          <a href="#pricing" class="block py-3">Pricing</a>
-          <a href="#product" class="block py-3">Product</a>
-          <a href="#about" class="block py-3">About Us</a>
-          <a href="#careers" class="block py-3">Careers</a>
-          <a href="#community" class="block py-3">Community</a>
+          <a href="#product" class="block py-3 transition-colors hover:text-brightRed">Services</a>
+          <a href="#pricing" class="block py-3 transition-colors hover:text-brightRed">Pricing</a>
+          <a href="#enterprice" class="block py-3 transition-colors hover:text-brightRed">Expertise</a>
+          <a href="#about" class="block py-3 transition-colors hover:text-brightRed">About Us</a>
+          <a href="#contact" class="block py-3 transition-colors hover:text-brightRed">Contact</a>
         </div>
       </div>
     </div>
@@ -92,17 +93,17 @@
       <!-- Left item -->
       <div class="flex flex-col space-y-10 md:w-1/2 animate-fade-in-up">
         <p class="text-sm font-semibold tracking-[0.3em] text-brightRed">
-          MODERN PRODUCT TEAMS
+          YOUR DIGITAL PARTNER
         </p>
         <h1
           class="max-w-xl text-center text-4xl font-extrabold leading-tight text-darkBlue md:text-left md:text-5xl lg:text-6xl">
-          Bring everyone together to
-          <span class="bg-gradient-to-r from-brightRed to-orange-500 bg-clip-text text-transparent">build better
-            products</span>
+          Elevate your brand with
+          <span class="bg-gradient-to-r from-brightRed to-orange-500 bg-clip-text text-transparent">complete digital
+            solutions</span>
         </h1>
         <p class="max-w-md text-center text-darkGrayishBlue md:text-left">
-          Manage keeps your roadmap, goals, and day-to-day tasks beautifully
-          in sync so your team can move fast without breaking alignment.
+          From stunning web design and robust hosting, to compelling graphics
+          and engaging social media strategies, UDT Web Solutions helps your business thrive.
         </p>
         <div class="flex justify-center gap-4 md:justify-start">
           <a href="#pricing"
@@ -113,11 +114,17 @@
             how it works</a>
         </div>
       </div>
-      <!-- Image -->
-      <div class="md:w-1/2 animate-fade-in-up animate-fade-in-up-delay-1">
+      <!-- Images Container -->
+      <div class="relative w-full md:w-1/2 animate-fade-in-up animate-fade-in-up-delay-1">
         <div
-          class="relative mx-auto max-w-md overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/40 shadow-2xl shadow-brightRed/10 backdrop-blur">
-          <img src="images/illustration-intro.svg" alt="" class="w-full translate-y-2 scale-105 object-contain" />
+          class="relative z-20 mx-auto max-w-sm md:max-w-md overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/40 shadow-2xl shadow-brightRed/10 backdrop-blur">
+          <img src="images/hero-img.png" alt="Digital Services"
+            class="w-full translate-y-2 scale-105 object-contain hover:scale-110 transition-transform duration-500" />
+        </div>
+        <div
+          class="absolute -bottom-16 -left-8 md:-bottom-24 md:-left-16 z-10 hidden sm:block w-2/3 max-w-[16rem] md:max-w-xs overflow-hidden rounded-[2rem] border border-white/40 bg-white/30 shadow-xl shadow-brightRed/5 backdrop-blur transform hover:-translate-y-2 transition-transform duration-500">
+          <img src="images/hero-img-2.png" alt="Agency Workflow"
+            class="w-full scale-105 object-contain opacity-90 hover:opacity-100 transition-opacity" />
         </div>
       </div>
     </div>
@@ -130,12 +137,11 @@
       <!-- What's Different -->
       <div class="flex flex-col space-y-8 md:w-1/2 animate-fade-in-up">
         <h2 class="max-w-md text-4xl font-bold text-center md:text-left">
-          What's different about Manage?
+          Why choose UDT Web Solutions?
         </h2>
         <p class="max-w-sm text-center text-darkGrayishBlue md:text-left">
-          Manage provides all the functionality your team needs, without the
-          complexity. Our software is tailor-made for modern digital product
-          teams.
+          We offer comprehensive digital services to elevate your brand from
+          every angle. Focus on your business while we handle your digital presence.
         </p>
       </div>
 
@@ -150,20 +156,19 @@
                 01
               </div>
               <h3 class="text-base font-bold md:mb-4 md:hidden">
-                Track company-wide progress
+                Web Development & Hosting
               </h3>
             </div>
           </div>
 
           <div>
             <h3 class="hidden mb-4 text-lg font-bold md:block">
-              Track company-wide progress
+              Web Development & Hosting
             </h3>
             <p class="text-darkGrayishBlue">
-              See how your day-to-day tasks fit into the wider vision. Go from
-              tracking progress at the milestone level all the way done to the
-              smallest of details. Never lose sight of the bigger picture
-              again.
+              Custom, responsive websites built to convert visitors into
+              customers, hosted on reliable, lightning-fast servers to keep
+              your business online 24/7.
             </p>
           </div>
         </div>
@@ -177,19 +182,19 @@
                 02
               </div>
               <h3 class="text-base font-bold md:mb-4 md:hidden">
-                Advanced built-in reports
+                Graphic Design & Content Creation
               </h3>
             </div>
           </div>
 
           <div>
             <h3 class="hidden mb-4 text-lg font-bold md:block">
-              Advanced built-in reports
+              Graphic Design & Content Creation
             </h3>
             <p class="text-darkGrayishBlue">
-              Set internal delivery estimates and track progress toward
-              company goals. Our customisable dashboard helps you build out
-              the reports you need to keep key stakeholders informed.
+              Eye-catching visuals and persuasive copywriting that perfectly
+              capture your brand identity and communicate your unique value
+              proposition to your audience.
             </p>
           </div>
         </div>
@@ -203,19 +208,19 @@
                 03
               </div>
               <h3 class="text-base font-bold md:mb-4 md:hidden">
-                Everything you need in one place
+                Social Media Management
               </h3>
             </div>
           </div>
 
           <div>
             <h3 class="hidden mb-4 text-lg font-bold md:block">
-              Everything you need in one place
+              Social Media Management
             </h3>
             <p class="text-darkGrayishBlue">
-              Stop jumping from one service to another to communicate, store
-              files, track tasks and share documents. Manage offers an
-              all-in-one team productivity solution.
+              Strategic social media management that grows your audience,
+              boosts engagement, and builds a loyal community around your
+              business across all platforms.
             </p>
           </div>
         </div>
@@ -239,15 +244,16 @@
         <!-- Card 1 -->
         <div
           class="flex h-full flex-col rounded-3xl border border-white/70 bg-white/80 p-8 text-left shadow-lg shadow-brightRed/5 backdrop-blur animate-fade-in-up">
-          <p class="text-sm font-semibold text-brightRed">Starter</p>
-          <h3 class="mt-3 text-3xl font-extrabold">$0</h3>
+          <p class="text-sm font-semibold text-brightRed">Essential Web</p>
+          <h3 class="mt-3 text-3xl font-extrabold">$299<span class="text-lg font-normal text-darkGrayishBlue">/mo</span>
+          </h3>
           <p class="mt-2 text-sm text-darkGrayishBlue">
-            For small teams getting started with product planning.
+            For small businesses looking for a professional online presence.
           </p>
           <ul class="mt-6 space-y-2 text-sm text-darkGrayishBlue">
-            <li>Up to 3 active projects</li>
-            <li>Shared roadmap</li>
-            <li>Basic reporting</li>
+            <li>Custom 5-page Website</li>
+            <li>Premium Cloud Hosting</li>
+            <li>Basic SEO Optimization</li>
           </ul>
           <a href="#community"
             class="mt-8 inline-flex w-full items-center justify-center rounded-full bg-brightRed px-4 py-2 text-sm font-semibold text-white shadow-md shadow-brightRed/40 transition hover:-translate-y-0.5 hover:bg-brightRedLight">Get
@@ -257,15 +263,16 @@
         <!-- Card 2 -->
         <div
           class="flex h-full flex-col rounded-3xl border border-brightRed/40 bg-brightRed text-white p-8 text-left shadow-xl shadow-brightRed/40 backdrop-blur animate-fade-in-up-delay-1">
-          <p class="text-sm font-semibold uppercase tracking-wide">Growth</p>
-          <h3 class="mt-3 text-3xl font-extrabold">$19</h3>
+          <p class="text-sm font-semibold uppercase tracking-wide">Digital Pro</p>
+          <h3 class="mt-3 text-3xl font-extrabold">$899<span class="text-lg font-normal text-veryPaleRed">/mo</span>
+          </h3>
           <p class="mt-2 text-sm text-veryPaleRed">
-            Everything you need to keep multiple squads aligned.
+            Everything you need for comprehensive web &amp; social growth.
           </p>
           <ul class="mt-6 space-y-2 text-sm text-veryPaleRed">
-            <li>Unlimited projects</li>
-            <li>Advanced reporting</li>
-            <li>Priority support</li>
+            <li>E-Commerce / Advanced Web</li>
+            <li>Graphic Design &amp; Content</li>
+            <li>Social Media Management</li>
           </ul>
           <a href="#community"
             class="mt-8 inline-flex w-full items-center justify-center rounded-full bg-white px-4 py-2 text-sm font-semibold text-brightRed shadow-md shadow-white/40 transition hover:-translate-y-0.5 hover:bg-veryPaleRed">Most
@@ -275,15 +282,15 @@
         <!-- Card 3 -->
         <div
           class="flex h-full flex-col rounded-3xl border border-white/70 bg-white/80 p-8 text-left shadow-lg shadow-brightRed/5 backdrop-blur animate-fade-in-up-delay-2">
-          <p class="text-sm font-semibold text-brightRed">Enterprise</p>
+          <p class="text-sm font-semibold text-brightRed">Full Agency Retainer</p>
           <h3 class="mt-3 text-3xl font-extrabold">Let’s talk</h3>
           <p class="mt-2 text-sm text-darkGrayishBlue">
-            Custom onboarding, security reviews, and dedicated support.
+            Scale your business rapidly with our dedicated team.
           </p>
           <ul class="mt-6 space-y-2 text-sm text-darkGrayishBlue">
-            <li>Custom SLAs</li>
-            <li>Security & compliance review</li>
-            <li>Dedicated success manager</li>
+            <li>Full Marketing Strategy</li>
+            <li>Custom App Development</li>
+            <li>Dedicated Success Manager</li>
           </ul>
           <a href="#community"
             class="mt-8 inline-flex w-full items-center justify-center rounded-full border border-brightRed/40 bg-white px-4 py-2 text-sm font-semibold text-brightRed shadow-sm transition hover:bg-veryPaleRed">Contact
@@ -299,7 +306,7 @@
     <div class="max-w-6xl px-5 mx-auto mt-32 text-center">
       <!-- Heading -->
       <h2 class="text-4xl font-bold text-center">
-        What's Different About Manage?
+        What Our Clients Say
       </h2>
       <!-- Testimonials Container -->
       <div class="flex flex-col mt-24 md:flex-row md:space-x-6">
@@ -309,9 +316,8 @@
           <img src="images/avatar-anisha.png" class="w-16 -mt-14" alt="" />
           <h5 class="text-lg font-bold">Anisha Li</h5>
           <p class="text-sm text-darkGrayishBlue">
-            “Manage has supercharged our team’s workflow. The ability to
-            maintain visibility on larger milestones at all times keeps
-            everyone motivated.”
+            “UDT Web Solutions built us an amazing website and revamped our entire social media strategy. We've seen a
+            massive increase in leads since we started working with them.”
           </p>
         </div>
 
@@ -321,9 +327,8 @@
           <img src="images/avatar-ali.png" class="w-16 -mt-14" alt="" />
           <h5 class="text-lg font-bold">Ali Bravo</h5>
           <p class="text-sm text-darkGrayishBlue">
-            “We have been able to cancel so many other subscriptions since
-            using Manage. There is no more cross-channel confusion and
-            everyone is much more focused.”
+            “The team at UDT truly understands digital marketing. Their graphic design and content creation perfectly
+            captured our brand's unique voice and elevated our online presence.”
           </p>
         </div>
 
@@ -333,9 +338,8 @@
           <img src="images/avatar-richard.png" class="w-16 -mt-14" alt="" />
           <h5 class="text-lg font-bold">Richard Watts</h5>
           <p class="text-sm text-darkGrayishBlue">
-            “Manage has supercharged our team’s workflow. The ability to
-            maintain visibility on larger milestones at all times keeps
-            everyone motivated.”
+            “Exceptional web hosting and support. We migrated our online platform to UDT Web Solutions, and our site
+            speed and reliability have never been better.”
           </p>
         </div>
       </div>
@@ -351,14 +355,14 @@
   <section id="about" class="bg-white py-20">
     <div class="container mx-auto flex flex-col items-start gap-12 px-4 md:flex-row">
       <div class="space-y-6 md:w-1/2 animate-fade-in-up">
-        <h2 class="text-3xl font-bold md:text-4xl">Built for modern teams</h2>
+        <h2 class="text-3xl font-bold md:text-4xl">Your partner in digital growth</h2>
         <p class="text-darkGrayishBlue">
-          Manage is a fully remote, product-first company focused on helping
-          distributed teams stay aligned without endless status meetings.
+          UDT Web Solutions is a full-service digital agency focused on delivering high-quality, end-to-end solutions
+          for businesses ready to scale.
         </p>
         <p class="text-darkGrayishBlue">
-          We believe the best products come from teams that can clearly see
-          how day-to-day decisions roll up into long-term outcomes.
+          We believe the best results come from strategies that clearly align impactful design, cutting-edge technology,
+          and authentic content.
         </p>
       </div>
       <div class="grid w-full gap-6 md:w-1/2 md:grid-cols-2">
@@ -384,14 +388,13 @@
     </div>
   </section>
 
-  <!-- Careers Section -->
-  <section id="careers" class="bg-gray-50 py-20">
+  <!-- Enterprice Section -->
+  <section id="enterprice" class="bg-gray-50 py-20">
     <div class="container mx-auto px-4">
       <div class="mx-auto max-w-2xl text-center">
-        <h2 class="text-3xl font-bold md:text-4xl">Careers at Manage</h2>
+        <h2 class="text-3xl font-bold md:text-4xl">Our Expertise</h2>
         <p class="mt-4 text-darkGrayishBlue">
-          Join a remote-first team shaping how modern product organizations
-          work.
+          Explore the key areas where our team of experts can add value to your business.
         </p>
       </div>
 
@@ -426,7 +429,58 @@
       <div class="mt-10 text-center">
         <a href="#community"
           class="inline-flex items-center justify-center rounded-full border border-brightRed/40 px-8 py-3 text-sm font-semibold text-brightRed transition hover:bg-brightRed hover:text-white">View
-          all open roles</a>
+          all services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-white py-20">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-bold md:text-4xl">Get In Touch</h2>
+        <p class="mt-4 text-darkGrayishBlue">
+          Ready to start your next big project? Drop us a message and our team will get back to you shortly.
+        </p>
+      </div>
+
+      <div class="mx-auto mt-12 max-w-2xl">
+        <form
+          class="flex flex-col space-y-6 rounded-3xl border border-white/70 bg-gray-50 p-8 shadow-xl shadow-brightRed/5 backdrop-blur sm:p-10 animate-fade-in-up">
+          <div class="grid gap-6 md:grid-cols-2">
+            <div class="flex flex-col space-y-2">
+              <label for="firstName" class="text-sm font-semibold text-darkBlue">First Name</label>
+              <input type="text" id="firstName"
+                class="rounded-xl border border-gray-200 bg-white px-4 py-3 text-darkBlue shadow-sm focus:border-brightRed focus:outline-none focus:ring-1 focus:ring-brightRed transition-colors"
+                placeholder="John" />
+            </div>
+            <div class="flex flex-col space-y-2">
+              <label for="lastName" class="text-sm font-semibold text-darkBlue">Last Name</label>
+              <input type="text" id="lastName"
+                class="rounded-xl border border-gray-200 bg-white px-4 py-3 text-darkBlue shadow-sm focus:border-brightRed focus:outline-none focus:ring-1 focus:ring-brightRed transition-colors"
+                placeholder="Doe" />
+            </div>
+          </div>
+
+          <div class="flex flex-col space-y-2">
+            <label for="email" class="text-sm font-semibold text-darkBlue">Email Address</label>
+            <input type="email" id="email"
+              class="rounded-xl border border-gray-200 bg-white px-4 py-3 text-darkBlue shadow-sm focus:border-brightRed focus:outline-none focus:ring-1 focus:ring-brightRed transition-colors"
+              placeholder="john@example.com" />
+          </div>
+
+          <div class="flex flex-col space-y-2">
+            <label for="message" class="text-sm font-semibold text-darkBlue">Message</label>
+            <textarea id="message" rows="4"
+              class="resize-none rounded-xl border border-gray-200 bg-white px-4 py-3 text-darkBlue shadow-sm focus:border-brightRed focus:outline-none focus:ring-1 focus:ring-brightRed transition-colors"
+              placeholder="Tell us about your project..."></textarea>
+          </div>
+
+          <button type="button"
+            class="mt-2 w-full rounded-full bg-brightRed px-8 py-4 text-sm font-bold text-white shadow-lg shadow-brightRed/40 transition hover:-translate-y-0.5 hover:bg-brightRedLight md:w-auto">
+            Send Message
+          </button>
+        </form>
       </div>
     </div>
   </section>
@@ -438,7 +492,7 @@
       class="container flex flex-col items-center justify-between px-6 py-24 mx-auto space-y-12 md:py-12 md:flex-row md:space-y-0">
       <!-- Heading -->
       <h2 class="text-5xl font-bold leading-tight text-center text-white md:text-4xl md:max-w-xl md:text-left">
-        Join thousands of product teams already using Manage
+        Ready to take your digital presence to the next level?
       </h2>
       <!-- Button -->
       <div>
@@ -459,7 +513,7 @@
         </div>
         <!-- Logo -->
         <div>
-          <img src="images/logo-white.svg" class="h-8" alt="" />
+          <img src="images/udt-logo-white.svg" class="h-8" alt="UDT Web Solutions" />
         </div>
         <!-- Social Links Container -->
         <div class="flex justify-center gap-4 md:justify-start">
@@ -494,8 +548,7 @@
           <a href="#" class="hover:text-brightRed transition-colors">About</a>
         </div>
         <div class="flex flex-col gap-3 text-white">
-          <a href="#" class="hover:text-brightRed transition-colors">Careers</a>
-          <a href="#" class="hover:text-brightRed transition-colors">Community</a>
+          <a href="#" class="hover:text-brightRed transition-colors">Enterprice</a>
           <a href="#" class="hover:text-brightRed transition-colors">Privacy Policy</a>
         </div>
       </div>

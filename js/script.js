@@ -62,14 +62,14 @@ const setTheme = (theme) => {
     if (themeIconDark) themeIconDark.classList.remove('hidden');
     if (themeIconLightMobile) themeIconLightMobile.classList.add('hidden');
     if (themeIconDarkMobile) themeIconDarkMobile.classList.remove('hidden');
-    if (navLogo) navLogo.src = 'images/logo-white.svg';
+    if (navLogo) navLogo.src = 'images/udt-logo-white.svg';
   } else {
     html.classList.remove('dark');
     if (themeIconLight) themeIconLight.classList.remove('hidden');
     if (themeIconDark) themeIconDark.classList.add('hidden');
     if (themeIconLightMobile) themeIconLightMobile.classList.remove('hidden');
     if (themeIconDarkMobile) themeIconDarkMobile.classList.add('hidden');
-    if (navLogo) navLogo.src = 'images/logo.svg';
+    if (navLogo) navLogo.src = 'images/udt-logo.svg';
   }
   localStorage.setItem('theme', theme);
 };
