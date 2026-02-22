@@ -259,3 +259,103 @@ body {
   outline: 2px solid var(--color-primary-blue);
   outline-offset: 2px;
 }
+
+/* Animated Video Presentation Keyframes */
+@keyframes sceneInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+
+  10% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  85% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  95% {
+    opacity: 0;
+    transform: translateY(-20px) scale(1.05);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+@keyframes sceneKeep {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+
+  10% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes videoProgress {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blobBounce {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+.animate-blob {
+  animation: blobBounce 10s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+/* These classes are applied by JS to trigger the animations */
+.run-scene-1 {
+  animation: sceneInOut 3.5s ease-in-out 0s forwards;
+}
+
+.run-scene-2 {
+  animation: sceneInOut 3.5s ease-in-out 3.5s forwards;
+}
+
+.run-scene-3 {
+  animation: sceneInOut 4s ease-in-out 7s forwards;
+}
+
+.run-scene-4 {
+  animation: sceneKeep 3s ease-out 11s forwards;
+}
+
+.run-video-progress {
+  animation: videoProgress 14s linear forwards;
+}
