@@ -11,7 +11,7 @@
   <title>UDT Web Solutions</title>
 </head>
 
-<body class="transition-colors duration-300">
+<body class="transition-colors duration-300 overflow-x-hidden">
   <!-- Utility safelist for JS-toggled classes -->
   <div class="hidden overflow-hidden"></div>
   <!-- Navbar -->
@@ -88,8 +88,12 @@
     <div
       class="pointer-events-none absolute inset-x-0 -top-40 -z-10 h-96 bg-gradient-to-b from-veryPaleRed/80 via-white to-transparent">
     </div>
+    <!-- Top-Right Background Pattern -->
+    <img src="images/bg-tablet-pattern.svg" alt=""
+      class="pointer-events-none absolute -top-20 -right-32 md:-top-40 md:-right-60 lg:-right-64 z-0 w-[500px] md:w-[814px] opacity-100" />
+
     <!-- Flex Container -->
-    <div class="container mx-auto flex flex-col-reverse items-center gap-16 px-6 md:flex-row">
+    <div class="relative z-10 container mx-auto flex flex-col-reverse items-center gap-16 px-6 md:flex-row">
       <!-- Left item -->
       <div class="flex flex-col space-y-10 md:w-1/2 animate-fade-in-up">
         <p class="text-sm font-semibold tracking-[0.3em] text-brightRed">
@@ -131,9 +135,13 @@
   </section>
 
   <!-- Product Section -->
-  <section id="product" class="bg-white py-20 md:py-24">
+  <section id="product" class="relative bg-white py-20 md:py-24 overflow-hidden">
+    <!-- Mid-Left Background Pattern -->
+    <img src="images/bg-tablet-pattern.svg" alt=""
+      class="pointer-events-none absolute top-40 -left-64 md:top-32 md:-left-96 lg:-left-80 z-0 hidden md:block w-[814px] opacity-100" />
+
     <!-- Flex container -->
-    <div class="container mx-auto flex flex-col space-y-12 px-4 md:flex-row md:space-y-0">
+    <div class="relative z-10 container mx-auto flex flex-col space-y-12 px-4 md:flex-row md:space-y-0">
       <!-- What's Different -->
       <div class="flex flex-col space-y-8 md:w-1/2 animate-fade-in-up">
         <h2 class="max-w-md text-4xl font-bold text-center md:text-left">
@@ -229,8 +237,17 @@
   </section>
 
   <!-- Pricing Section -->
-  <section id="pricing" class="bg-gray-50 py-20">
-    <div class="container mx-auto px-4 text-center">
+  <section id="pricing" class="relative bg-gray-50 py-20 overflow-hidden">
+    <!-- Left Pill Background Pattern -->
+    <div
+      class="pointer-events-none absolute -top-80 -left-[30rem] z-0 h-[800px] w-[800px] rounded-full bg-veryPaleRed/80 md:-top-[20rem] md:-left-[20rem] md:h-[1200px] md:w-[1200px] opacity-70">
+    </div>
+
+    <!-- Right Background Pattern -->
+    <img src="images/bg-tablet-pattern.svg" alt=""
+      class="pointer-events-none absolute top-20 -right-32 md:-top-20 md:-right-[30rem] lg:-right-[20rem] z-0 hidden md:block w-[814px] opacity-60" />
+
+    <div class="relative z-10 container mx-auto px-4 text-center">
       <div class="mx-auto max-w-2xl space-y-4">
         <h2 class="text-3xl font-bold md:text-4xl">
           Simple, transparent pricing
@@ -301,9 +318,13 @@
   </section>
 
   <!-- Testimonials -->
-  <section id="testimonials">
+  <section id="testimonials" class="relative overflow-hidden">
+    <!-- Left Background Pattern -->
+    <img src="images/bg-tablet-pattern.svg" alt=""
+      class="pointer-events-none absolute top-20 -left-64 md:top-32 md:-left-96 lg:-left-[30rem] z-0 hidden md:block w-[814px] opacity-100" />
+
     <!-- Container to heading and testm blocks -->
-    <div class="max-w-6xl px-5 mx-auto mt-32 text-center">
+    <div class="relative z-10 max-w-6xl px-5 mx-auto mt-32 text-center">
       <!-- Heading -->
       <h2 class="text-4xl font-bold text-center">
         What Our Clients Say
@@ -389,8 +410,17 @@
   </section>
 
   <!-- Enterprice Section -->
-  <section id="enterprice" class="bg-gray-50 py-20">
-    <div class="container mx-auto px-4">
+  <section id="enterprice" class="relative bg-gray-50 py-20 overflow-hidden">
+    <!-- Left Pill Background Pattern -->
+    <div
+      class="pointer-events-none absolute -bottom-80 -left-[30rem] z-0 h-[800px] w-[800px] rounded-full bg-veryPaleRed/80 md:-bottom-[20rem] md:-left-[20rem] md:h-[1200px] md:w-[1200px] opacity-70">
+    </div>
+
+    <!-- Right Background Pattern -->
+    <img src="images/bg-tablet-pattern.svg" alt=""
+      class="pointer-events-none absolute -top-20 -right-32 md:-top-40 md:-right-60 lg:-right-64 z-0 hidden md:block w-[814px] opacity-60" />
+
+    <div class="relative z-10 container mx-auto px-4">
       <div class="mx-auto max-w-2xl text-center">
         <h2 class="text-3xl font-bold md:text-4xl">Our Expertise</h2>
         <p class="mt-4 text-darkGrayishBlue">

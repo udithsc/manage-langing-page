@@ -4,11 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "concurrently \"npx @tailwindcss/cli -i ./input.css -o ./css/main.css --watch\" \"live-server --port=5173 --no-css-inject --wait=200 ./\"",
     "build": "npx @tailwindcss/cli -i ./input.css -o ./css/main.css && mkdir -p dist && cp -r index.html css images js dist/",
-    "watch": "npx @tailwindcss/cli -i ./input.css -o ./css/main.css --watch",
-    "serve": "live-server --port=5173 --no-css-inject --wait=200 ./",
-    "serve:dist": "live-server --port=8080 --no-css-inject ./dist",
-    "dev": "concurrently \"npm run watch\" \"npm run serve\""
+    "serve": "npm run build && live-server --port=8080 --no-css-inject ./dist"
   },
   "keywords": [],
   "author": "",
